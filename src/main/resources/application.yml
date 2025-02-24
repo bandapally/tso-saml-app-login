@@ -1,0 +1,26 @@
+spring:
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          tso-saml-app:
+            entity-id: urn:gov:gsa:SAML:2.0.profiles:sp:sso:AdministrativeOfficeoftheU.S.Courts:tso-saml-app-sand
+            assertion-consumer-service-location: https://idp.int.identitysandbox.gov/api/saml/auth2024
+            assertion-consumer-service-binding: urn:gov:gsa:SAML:2.0:bindings:HTTP-Redirect
+            single-logout-service-binding: urn:gov:gsa:SAML:2.0:bindings:HTTP-POST
+            single-logout-service-location: https://idp.int.identitysandbox.gov/api/saml/logout2024
+            assertion-timeout: PT30S
+            assertion-consumer-service-url: http://localhost:8080/login/saml2/sso/tso-saml-app-sand
+            name-id-format: urn:gov:gsa:SAML:2.0:tso-saml-app:persistent
+            decryption:
+              private-key-location: classpath:local.key
+              certificate-location: classpath:local.crt
+            signing:
+              credentials:
+                - private-key-location: classpath:local.key
+                  certificate-location: classpath:local.crt
+            assertingparty:
+              metadata-uri: https://idp.int.identitysandbox.gov/api/saml/metadata2024
+            singlelogout:
+              binding: POST
+              response-url: http://localhost:8080/logout/saml2/slo

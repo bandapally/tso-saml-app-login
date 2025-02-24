@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: #ffffff; /* or 'white' */
+}
+
+/* Change the color of visited links to white */
+a:visited {
+    color: #ffffff; /* or 'white' */
+}
+
+/* Change the color when hovering over the link to white */
+a:hover {
+    color: #ffffff; /* or 'white' */
+}
+
+/* News Related */
+.news-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.news {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 100px; /* Add margin between news items */
+    font-size: 18px;
+    animation: scrollNews 10s linear infinite;
+}
+
+@keyframes scrollNews {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

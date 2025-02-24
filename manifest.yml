@@ -1,0 +1,14 @@
+applications:
+  - name: tso-saml-app-1.0
+    memory: 750MB
+    instances: 1
+    buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack.git
+    path: build/libs/tso-saml-app-1.0.jar
+    random-route: true
+    env:
+      spring_profiles_active: 'cloud'
+      JBP_LOG_LEVEL: DEBUG
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
+
+

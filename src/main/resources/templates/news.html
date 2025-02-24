@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Header Scroll</title>
+    <style>
+        .news-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .news {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 100px; /* Add margin between news items */
+            font-size: 18px;
+            animation: scrollNews 10s linear infinite;
+        }
+
+        @keyframes scrollNews {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="news-container">
+    <div class="news">NIST 800-63-4 is out, visit link  <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-4.ipd.pdf" target="_blank">Download NIST SP 800-63-4</a></div>
+    <div class="news">Application X is going live on 02/13/2024</div>
+    <!-- Add more news elements as needed -->
+</div>
+
+</body>
+</html>

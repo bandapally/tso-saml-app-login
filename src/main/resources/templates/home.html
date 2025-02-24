@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSO SAML Web Application</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>TSO SAML Web Application</h1>
+    <p>Technology Solutions Office, Enterprise Architecture</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a> |
+    <a href="#about">About Us</a> |
+    <a href="#services">Services</a> |
+    <a href="#contact">Benefits</a> |
+    <a href="#user">User</a> |
+    <a href="#news">News</a>
+</nav>
+
+<div class="container">
+
+    <section id="home" class="box">
+        <h2>Welcome to TSO</h2>
+        <p>TSO defines rapidly evolving business landscape, guides Federal Government organizations through technological complexities. It not only ensures the current viability of technology solutions but also positions the enterprise for future success by embracing change and fostering innovation.</p>
+    </section>
+
+    <section id="about" class="box">
+        <h2>About Us</h2>
+        <p>At the core of every successful enterprise lies a robust and well-defined Enterprise Solution Architecture. It serves as the blueprint for designing and implementing solutions that align with the overarching goals and strategies of the organization. Enterprise Solution Architecture encompasses the design principles, guidelines, and standards that govern the development and evolution of the enterprise's technology landscape.</p>
+    </section>
+
+    <section id="services" class="box">
+        <h2>Our Services</h2>
+        <p>A well-architected solution is modular and scalable. It allows for the integration of new technologies and the ability to scale as the business grows, ensuring long-term sustainability.</p>
+    </section>
+
+    <section id="contact" class="box">
+        <h2>Benefits</h2>
+        <p>Enhanced Efficiency: Streamlined and optimized processes lead to increased operational efficiency.
+            Cost Reduction: By rationalizing the technology landscape, ESA helps in reducing unnecessary expenses.
+            Innovation Enablement: ESA fosters an environment where innovative solutions can be developed and integrated seamlessly.
+            Risk Mitigation: Robust security measures and compliance adherence mitigate risks associated with data breaches and legal issues.</p>
+    </section>
+    <section id="user" class="box">
+        <h2>User</h2>
+        <p>You are successfully logged in as <span sec:authentication="name"></span></p>
+        <p>Your email address is <span th:text="${emailAddress}"></span>.</p>
+        <p>Your authorities are <span sec:authentication="authorities"></span>.</p>
+        <h2>All Your Attributes</h2>
+        <dl th:each="userAttribute : ${userAttributes}">
+            <dt th:text="${userAttribute.key}"></dt>
+            <dd th:text="${userAttribute.value}"></dd>
+        </dl>
+    </section>
+    <section id="news" class="box">
+        <h2>News</h2>
+        <div class="news-container">
+            <div class="news"><b>NIST 800-63-4 is out, visit link  <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-4.ipd.pdf" target="_blank">visit link</a></b></div>
+            <div class="news"><b>NIST joins the FIDO Alliance, visit link <a href="https://www.nist.gov/blogs/cybersecurity-insights/nist-joins-fido-alliance" target="_blank">visit link</a></b></div>
+            <!--<div class="news"><b>Judicial Information Systems - Information Security Policy (JISF) is out, visit link  <a href="https://www.courts.state.md.us/sites/default/files/import/procurement/pdfs/jisinformationsecuritypolicyexternal.pdf" target="_blank">visit link</a></b></div>-->
+            <!-- Add more news elements as needed -->
+        </div>
+    </section>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Administrative of Courts. All rights reserved.</p>
+</footer>
+<form th:action="@{/logout}" method="post">
+    <button id="logout" type="submit">Logout</button>
+</form>
+</body>
+</html>
