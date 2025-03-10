@@ -1,3 +1,11 @@
+server:
+  port: 443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.jks  # Path to your keystore file
+    key-store-password: changeit  # Keystore password
+    key-store-type: JKS  # Change based on your keystore type (e.g., PKCS12)
+    key-alias: myalias  # The alias of your SSL certificate in the keystore
 spring:
   security:
     saml2:
